@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    
+
+    <div class="continer">
+
+        <div class="row justify-content-center">
+            <div class="col-md-3 m-4 text-center">
+                <h1 class="site-header">URL Site Scraper</h1>
+            </div>
+        </div>
+
+        <div class="row justify-content-center m-5">
+            <div class="col-md-6">
+                <form action="" method='POST'>
+                    {% csrf_token %}
+                    <div class="input-group">
+                        <input class="form-control" name="site" type="text" id="site" placeholder="Enter site address">
+                        <button class="btn btn-primary ms-2" type="submit">Scrape</button>
+                        <a class="btn btn-warning ms-2" href="{% url 'delete' %}">Delete</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <table class="table">
+                    <thead class="table-dark">
+                        <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Address Name</th>
+                        <th scope="col">Link</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for link in link_data %}
+                            <tr>
+                                <td>{{link.id}}</td>
+                                <td>{{link.name}}</td>
+                                <td><a href="{{link.address}}" target="_blank">{{link.address}}</a></td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+    
+{% endblock content %}
+    
