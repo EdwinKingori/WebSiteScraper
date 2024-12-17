@@ -13,7 +13,9 @@ db.sqlite3  # Ignore SQLite database files (if using SQLite for local developmen
 venv/       # Ignore your virtual environment directory (adjust name if different)
 
 # Environment variables
-.env        # Environment configuration files (e.g., for secret keys)
+# Environment configuration files (e.g., for secret keys)
+.env
+
 
 # Static and media files
 /static/
