@@ -27,6 +27,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'scrape_site.apps.ScrapeSiteConfig',
+    'api',
+
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
